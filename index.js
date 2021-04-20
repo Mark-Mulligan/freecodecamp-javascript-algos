@@ -82,12 +82,24 @@ function findElement(arr, func) {
 
 findElement([1, 2, 3, 4], num => num % 2 === 0);
 
-//Boo who
+//Boo who, checks to see if input is boolean
 function booWho(bool) {
   return (typeof bool === 'boolean');
 }
 
 booWho(null);
 
+//Title Case a Sentence
+function titleCase(str) {
+  const words = str.toLowerCase().split(' ');
+  
+  const titleCaseWords = words.map(word => {
+    return word[0].toUpperCase() + word.slice(1);
+  })
+
+  return titleCaseWords.join(' ');
+}
+
+console.log(titleCase("I'm a little tea pot"));
 
 
