@@ -20,5 +20,19 @@ function factorialize(num) {
   return sum;
 }
 
+//Find the Longest Word in a StringPassed
+function findLongestWordLength(str) {
+  const words = str.split(' ');
+  let longestWord = words[0].length;
+
+  words.forEach(word => {
+    if (word.length > longestWord) longestWord = word.length;
+  })
+
+  return longestWord;
+}
+
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+
 
 
