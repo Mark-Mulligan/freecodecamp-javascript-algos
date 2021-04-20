@@ -49,6 +49,16 @@ function confirmEnding(str, target) {
   return ending === target;
 }
 
-console.log(confirmEnding("Bastian", "xn"));
+//Repeat a String Repeat a String
+function repeatStringNumTimes(str, num) {
+  let repeatedString = '';
+  for (let i = 0; i < num; i++) {
+    repeatedString += str;
+  }
+
+  return repeatedString;
+}
+
+console.log(repeatStringNumTimes("abc", 3));
 
 
