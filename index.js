@@ -5,11 +5,20 @@ function convertToF(celsius) {
   return celsius * (9/5) + 32;
 }
 
-console.log(convertToF(30));
-
 //Reverse a String
 function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-console.log(reverseString("hello"));
+//Factorialize a NumberPassed
+function factorialize(num) {
+  let sum = 1;
+
+  for (let i = 2; i <= num; i++) {
+    sum *= i;
+  }
+  return sum;
+}
+
+
+
