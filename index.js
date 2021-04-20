@@ -20,7 +20,7 @@ function factorialize(num) {
   return sum;
 }
 
-//Find the Longest Word in a StringPassed
+//Find the Longest Word in a String
 function findLongestWordLength(str) {
   const words = str.split(' ');
   let longestWord = words[0].length;
@@ -32,7 +32,17 @@ function findLongestWordLength(str) {
   return longestWord;
 }
 
-console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+//Return Largest Numbers in Arrays
+function largestOfFour(arr) {
+  const largestNumbers = [];
 
+  arr.forEach(subArr => {
+    largestNumbers.push(Math.max(...subArr));
+  })
+  
+  return largestNumbers;
+}
+
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
 
 
