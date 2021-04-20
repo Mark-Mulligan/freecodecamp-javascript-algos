@@ -92,7 +92,7 @@ booWho(null);
 //Title Case a Sentence
 function titleCase(str) {
   const words = str.toLowerCase().split(' ');
-  
+
   const titleCaseWords = words.map(word => {
     return word[0].toUpperCase() + word.slice(1);
   })
@@ -100,6 +100,17 @@ function titleCase(str) {
   return titleCaseWords.join(' ');
 }
 
-console.log(titleCase("I'm a little tea pot"));
+titleCase("I'm a little tea pot");
+
+//Slice and Splice
+function frankenSplice(arr1, arr2, n) {
+  let arr1copy = [...arr1];
+  let arr2copy = [...arr2];
+
+  arr2copy.splice(n, 0, ...arr1copy);
+  return arr2copy;
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
 
 
