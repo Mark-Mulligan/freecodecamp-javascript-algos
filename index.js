@@ -43,6 +43,12 @@ function largestOfFour(arr) {
   return largestNumbers;
 }
 
-console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+//Confirm the Ending In String
+function confirmEnding(str, target) {
+  const ending = str.slice(str.length - target.length, str.length);
+  return ending === target;
+}
+
+console.log(confirmEnding("Bastian", "xn"));
 
 
