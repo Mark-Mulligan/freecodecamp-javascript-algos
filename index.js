@@ -59,6 +59,21 @@ function repeatStringNumTimes(str, num) {
   return repeatedString;
 }
 
-console.log(repeatStringNumTimes("abc", 3));
+//Truncate a String
+function truncateString(str, num) {
+  return (num < str.length) ? str.slice(0, num) + '...' : str;
+}
+
+//More readable
+function truncateString2(str, num) {
+  if (num < str.length) {
+    return str.slice(0, num) + '...';
+  }
+
+  return str;
+}
+
+
+
 
 
