@@ -114,7 +114,7 @@ function frankenSplice(arr1, arr2, n) {
 //Falsy Bouncer
 function bouncer(arr) {
   const resultArr = [];
-  
+
   arr.forEach(item => {
     if (item) resultArr.push(item);
   })
@@ -122,6 +122,15 @@ function bouncer(arr) {
   return resultArr;
 }
 
-console.log(bouncer([7, "ate", "", false, 9]));
+//Where do I belong
+function getIndexToIns(arr, num) {
+  const sortedArr = arr.sort((a, b) => a - b);
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] >= num) return i;
+  }
+  return sortedArr.length;
+}
+
 
 
