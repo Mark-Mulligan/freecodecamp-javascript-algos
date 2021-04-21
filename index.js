@@ -146,3 +146,25 @@ function mutation(arr) {
   return true;
 }
 
+//Chunky Monkey
+function chunkArrayInGroups(arr, size) {
+  const resultArr = [];
+  let counter = 0;
+
+  while (counter < arr.length) {
+    let tempArr = [];
+
+    for (let i = 0; i < size; i++) {
+      if (counter < arr.length) {
+        tempArr.push(arr[counter]);
+        counter++;
+      } else {
+        break;
+      }
+    }
+    resultArr.push(tempArr);
+  } 
+
+  return resultArr;
+}
+
