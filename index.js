@@ -183,4 +183,22 @@ function sumAll(arr) {
   return sum;
 }
 
-console.log(sumAll([1, 4]));
+//Diff Two Arrays
+function diffArray(arr1, arr2) {
+  const resultArr = [];
+
+  arr1.forEach(item => {
+    if (!arr2.includes(item)) {
+      resultArr.push(item);
+    }
+  })
+
+  arr2.forEach(item => {
+    if (!arr1.includes(item)) {
+      resultArr.push(item)
+    }
+  })
+
+  return resultArr;
+}
+
