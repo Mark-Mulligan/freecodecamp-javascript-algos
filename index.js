@@ -202,3 +202,18 @@ function diffArray(arr1, arr2) {
   return resultArr;
 }
 
+//Seek and Destroy
+function destroyer(arr) {
+  let targets = [...arguments].slice(1);
+  let result = [];
+
+  arr.forEach(value => {
+    if (!targets.includes(value)) {
+      result.push(value);
+    }
+  })
+
+  return result;
+}
+
+
