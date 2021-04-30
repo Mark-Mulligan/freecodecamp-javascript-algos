@@ -216,4 +216,32 @@ function destroyer(arr) {
   return result;
 }
 
+//Wherefore art Thou 
+// Need to make more efficient
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+  const keys = Object.keys(source);
+  let matching = true;
+
+  collection.forEach(object => {
+    keys.forEach(key => {
+      if (!object.hasOwnProperty(key) || object[key] !== source[key]) {
+        matching = false;
+      }
+    });
+
+    if (matching) arr.push(object);
+    else matching = true;
+  })
+
+  // Only change code above this line
+  console.log(arr);
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+
+
 
