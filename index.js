@@ -236,12 +236,19 @@ function whatIsInAName(collection, source) {
   })
 
   // Only change code above this line
-  console.log(arr);
   return arr;
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
 
+/* Spinal Tap Case */
+function spinalCase(str) {
+  let regex = /\s+|_+/g;
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  return str.replace(regex, "-").toLowerCase();
+  
+}
+
+console.log(spinalCase('AllThe-small Things_are_Here'));
 
 
