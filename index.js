@@ -249,6 +249,18 @@ function spinalCase(str) {
   
 }
 
-console.log(spinalCase('AllThe-small Things_are_Here'));
+
+/* Pig Latin */
+function translatePigLatin(str) {
+  let regex = /^[^aeiou]+/i;
+  
+  if (str.match(regex)) {
+    let consonants = str.match(regex)[0];
+    return str.replace(regex, '') + consonants + 'ay';
+  } else {
+    return str + 'way';
+  }
+}
+
 
 
