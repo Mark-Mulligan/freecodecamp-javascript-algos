@@ -323,6 +323,22 @@ function convertHTML(str) {
   return result.join('');
 }
 
-console.log(convertHTML("Dolce & Gabbana"));
+/* Sum All Odd Fibonacci Numbers */
+function sumFibs(num) {
+  let previousVal = 1;
+  let currentVal = 1;
+  let tempVal = 0;
+  let oddNumFibSum = 1;
 
+  while (currentVal <= num) {
+    if (currentVal % 2 > 0) oddNumFibSum += currentVal;
+    tempVal = currentVal;
+    currentVal = previousVal + currentVal;
+    previousVal = tempVal;
+  }
+
+  return oddNumFibSum;
+}
+
+console.log(sumFibs(10));
 
