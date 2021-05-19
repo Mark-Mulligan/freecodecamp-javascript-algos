@@ -272,5 +272,22 @@ function myReplace(str, before, after) {
   return str.replace(before, after);
 }
 
+/* DNA pairing */
+function pairElement(str) {
+  const firstDNAelements = str.split('');
+  const DNApairs = [];
+
+  firstDNAelements.forEach(dna => {
+    if (dna === 'C') DNApairs.push(['C', 'G']);
+    else if (dna === 'G') DNApairs.push(['G', 'C']);
+    else if (dna === 'A') DNApairs.push(['A', 'T'])
+    else DNApairs.push(['T', 'A']);
+  })
+
+  return DNApairs;
+}
+
+console.log(pairElement("GCG"));
+
 
 
