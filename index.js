@@ -2,12 +2,12 @@
 
 //Convert Celsius to Fahrenheit
 function convertToF(celsius) {
-  return celsius * (9/5) + 32;
+  return celsius * (9 / 5) + 32;
 }
 
 //Reverse a String
 function reverseString(str) {
-  return str.split('').reverse().join('');
+  return str.split("").reverse().join("");
 }
 
 //Factorialize a NumberPassed
@@ -22,12 +22,12 @@ function factorialize(num) {
 
 //Find the Longest Word in a String
 function findLongestWordLength(str) {
-  const words = str.split(' ');
+  const words = str.split(" ");
   let longestWord = words[0].length;
 
-  words.forEach(word => {
+  words.forEach((word) => {
     if (word.length > longestWord) longestWord = word.length;
-  })
+  });
 
   return longestWord;
 }
@@ -36,10 +36,10 @@ function findLongestWordLength(str) {
 function largestOfFour(arr) {
   const largestNumbers = [];
 
-  arr.forEach(subArr => {
+  arr.forEach((subArr) => {
     largestNumbers.push(Math.max(...subArr));
-  })
-  
+  });
+
   return largestNumbers;
 }
 
@@ -51,7 +51,7 @@ function confirmEnding(str, target) {
 
 //Repeat a String Repeat a String
 function repeatStringNumTimes(str, num) {
-  let repeatedString = '';
+  let repeatedString = "";
   for (let i = 0; i < num; i++) {
     repeatedString += str;
   }
@@ -61,13 +61,13 @@ function repeatStringNumTimes(str, num) {
 
 //Truncate a String
 function truncateString(str, num) {
-  return (num < str.length) ? str.slice(0, num) + '...' : str;
+  return num < str.length ? str.slice(0, num) + "..." : str;
 }
 
 //More readable
 function truncateString2(str, num) {
   if (num < str.length) {
-    return str.slice(0, num) + '...';
+    return str.slice(0, num) + "...";
   }
 
   return str;
@@ -80,24 +80,24 @@ function findElement(arr, func) {
   }
 }
 
-findElement([1, 2, 3, 4], num => num % 2 === 0);
+findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 
 //Boo who, checks to see if input is boolean
 function booWho(bool) {
-  return (typeof bool === 'boolean');
+  return typeof bool === "boolean";
 }
 
 booWho(null);
 
 //Title Case a Sentence
 function titleCase(str) {
-  const words = str.toLowerCase().split(' ');
+  const words = str.toLowerCase().split(" ");
 
-  const titleCaseWords = words.map(word => {
+  const titleCaseWords = words.map((word) => {
     return word[0].toUpperCase() + word.slice(1);
-  })
+  });
 
-  return titleCaseWords.join(' ');
+  return titleCaseWords.join(" ");
 }
 
 titleCase("I'm a little tea pot");
@@ -115,9 +115,9 @@ function frankenSplice(arr1, arr2, n) {
 function bouncer(arr) {
   const resultArr = [];
 
-  arr.forEach(item => {
+  arr.forEach((item) => {
     if (item) resultArr.push(item);
-  })
+  });
 
   return resultArr;
 }
@@ -135,7 +135,7 @@ function getIndexToIns(arr, num) {
 //Mutations
 function mutation(arr) {
   const firstWord = arr[0].toLowerCase();
-  const secondWord = arr[1].toLowerCase().split('');
+  const secondWord = arr[1].toLowerCase().split("");
 
   for (let i = 0; i < secondWord.length; i++) {
     if (!firstWord.includes(secondWord[i])) {
@@ -163,7 +163,7 @@ function chunkArrayInGroups(arr, size) {
       }
     }
     resultArr.push(tempArr);
-  } 
+  }
 
   return resultArr;
 }
@@ -187,17 +187,17 @@ function sumAll(arr) {
 function diffArray(arr1, arr2) {
   const resultArr = [];
 
-  arr1.forEach(item => {
+  arr1.forEach((item) => {
     if (!arr2.includes(item)) {
       resultArr.push(item);
     }
-  })
+  });
 
-  arr2.forEach(item => {
+  arr2.forEach((item) => {
     if (!arr1.includes(item)) {
-      resultArr.push(item)
+      resultArr.push(item);
     }
-  })
+  });
 
   return resultArr;
 }
@@ -207,16 +207,16 @@ function destroyer(arr) {
   let targets = [...arguments].slice(1);
   let result = [];
 
-  arr.forEach(value => {
+  arr.forEach((value) => {
     if (!targets.includes(value)) {
       result.push(value);
     }
-  })
+  });
 
   return result;
 }
 
-//Wherefore art Thou 
+//Wherefore art Thou
 // Need to make more efficient
 function whatIsInAName(collection, source) {
   var arr = [];
@@ -224,8 +224,8 @@ function whatIsInAName(collection, source) {
   const keys = Object.keys(source);
   let matching = true;
 
-  collection.forEach(object => {
-    keys.forEach(key => {
+  collection.forEach((object) => {
+    keys.forEach((key) => {
       if (!object.hasOwnProperty(key) || object[key] !== source[key]) {
         matching = false;
       }
@@ -233,31 +233,28 @@ function whatIsInAName(collection, source) {
 
     if (matching) arr.push(object);
     else matching = true;
-  })
+  });
 
   // Only change code above this line
   return arr;
 }
-
-
 
 /* Spinal Tap Case */
 function spinalCase(str) {
   let regex = /\s+|_+/g;
   str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
   return str.replace(regex, "-").toLowerCase();
-  
 }
 
 /* Pig Latin */
 function translatePigLatin(str) {
   let regex = /^[^aeiou]+/i;
-  
+
   if (str.match(regex)) {
     let consonants = str.match(regex)[0];
-    return str.replace(regex, '') + consonants + 'ay';
+    return str.replace(regex, "") + consonants + "ay";
   } else {
-    return str + 'way';
+    return str + "way";
   }
 }
 
@@ -274,15 +271,15 @@ function myReplace(str, before, after) {
 
 /* DNA pairing */
 function pairElement(str) {
-  const firstDNAelements = str.split('');
+  const firstDNAelements = str.split("");
   const DNApairs = [];
 
-  firstDNAelements.forEach(dna => {
-    if (dna === 'C') DNApairs.push(['C', 'G']);
-    else if (dna === 'G') DNApairs.push(['G', 'C']);
-    else if (dna === 'A') DNApairs.push(['A', 'T'])
-    else DNApairs.push(['T', 'A']);
-  })
+  firstDNAelements.forEach((dna) => {
+    if (dna === "C") DNApairs.push(["C", "G"]);
+    else if (dna === "G") DNApairs.push(["G", "C"]);
+    else if (dna === "A") DNApairs.push(["A", "T"]);
+    else DNApairs.push(["T", "A"]);
+  });
 
   return DNApairs;
 }
@@ -290,12 +287,12 @@ function pairElement(str) {
 /* Missing Letters */
 function fearNotLetter(str) {
   let letterCharCode = str.charCodeAt(0);
-  
+
   for (let i = 0; i < str.length; i++) {
     if (letterCharCode !== str.charCodeAt(i)) {
       return String.fromCharCode(letterCharCode);
     }
-    
+
     letterCharCode++;
   }
 }
@@ -308,19 +305,19 @@ function uniteUnique(arr) {
 
 /* Convert HTML EntitiesPassed */
 function convertHTML(str) {
-  let characters = str.split('');
+  let characters = str.split("");
   let result = [];
 
   characters.forEach((character, index) => {
-    if (character === '&') result.push('&amp;');
-    else if (character === '<') result.push('&lt;');
-    else if (character === '>') result.push('&gt;');
-    else if (character === '"') result.push('&quot;');
-    else if (character === `'`) result.push('&apos;');
+    if (character === "&") result.push("&amp;");
+    else if (character === "<") result.push("&lt;");
+    else if (character === ">") result.push("&gt;");
+    else if (character === '"') result.push("&quot;");
+    else if (character === `'`) result.push("&apos;");
     else result.push(character);
-  })
+  });
 
-  return result.join('');
+  return result.join("");
 }
 
 /* Sum All Odd Fibonacci Numbers */
@@ -351,31 +348,28 @@ function sumPrimes(num) {
 }
 
 function isPrime(num) {
-  for(var i = 2; i < num; i++)
-    if(num % i === 0) return false;
+  for (var i = 2; i < num; i++) if (num % i === 0) return false;
   return num > 1;
 }
 
 /* Smallest Common Multiple */
+// Need a better solution 
 function smallestCommons(arr) {
-  arr.sort((a, b) => a - b);
-  let min = arr[0];
-  let max = arr[1];
-  let numberRange = [];
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  let targetNum = min;
+  let numFound = false;
 
-  for (let i = min; i <= max; i++) {
-    numberRange.push(i);
-  }
-
-
-  return arr;
+  while (!numFound) {
+    for (let i = min; i <= max; i++) {
+      if (targetNum % i !== 0) {
+        targetNum++;
+        i = min;
+      } else if (i === max && targetNum % max === 0 && targetNum % min === 0) {
+        return targetNum;
+      }
+    }
+  } 
 }
 
-
-console.log(smallestCommons([5,1]));
-
-
-
-
-
-
+console.log(smallestCommons([23, 18]));
