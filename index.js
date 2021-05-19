@@ -356,6 +356,23 @@ function isPrime(num) {
   return num > 1;
 }
 
+/* Smallest Common Multiple */
+function smallestCommons(arr) {
+  arr.sort((a, b) => a - b);
+  let min = arr[0];
+  let max = arr[1];
+  let numberRange = [];
+
+  for (let i = min; i <= max; i++) {
+    numberRange.push(i);
+  }
+
+
+  return arr;
+}
+
+
+console.log(smallestCommons([5,1]));
 
 
 
