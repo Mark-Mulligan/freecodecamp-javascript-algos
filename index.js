@@ -385,4 +385,9 @@ function dropElements(arr, func) {
   return result;
 }
 
-console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));
+/* Steamroller */
+function steamrollArray(arr) {
+  return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur), []);
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
