@@ -287,7 +287,19 @@ function pairElement(str) {
   return DNApairs;
 }
 
-console.log(pairElement("GCG"));
+/* Missing Letters */
+function fearNotLetter(str) {
+  let letterCharCode = str.charCodeAt(0);
+  
+  for (let i = 0; i < str.length; i++) {
+    if (letterCharCode !== str.charCodeAt(i)) {
+      return String.fromCharCode(letterCharCode);
+    }
+    
+    letterCharCode++;
+  }
+}
 
+console.log(fearNotLetter("abcde"));
 
 
