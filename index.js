@@ -300,6 +300,12 @@ function fearNotLetter(str) {
   }
 }
 
-console.log(fearNotLetter("abcde"));
+/* Sorted Union */
+function uniteUnique(arr) {
+  let result = [...arguments].flat();
+  return [...new Set(result)];
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 
 
