@@ -306,6 +306,23 @@ function uniteUnique(arr) {
   return [...new Set(result)];
 }
 
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+/* Convert HTML EntitiesPassed */
+function convertHTML(str) {
+  let characters = str.split('');
+  let result = [];
+
+  characters.forEach((character, index) => {
+    if (character === '&') result.push('&amp;');
+    else if (character === '<') result.push('&lt;');
+    else if (character === '>') result.push('&gt;');
+    else if (character === '"') result.push('&quot;');
+    else if (character === `'`) result.push('&apos;');
+    else result.push(character);
+  })
+
+  return result.join('');
+}
+
+console.log(convertHTML("Dolce & Gabbana"));
 
 
