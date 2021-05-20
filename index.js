@@ -412,14 +412,15 @@ function truthCheck(collection, pre) {
   return true;
 }
 
-console.log(
-  truthCheck(
-    [
-      { user: "Tinky-Winky", sex: "male" },
-      { user: "Dipsy", sex: "male" },
-      { user: "Laa-Laa", sex: "female" },
-      { user: "Po", sex: "female" },
-    ],
-    "sex"
-  )
-);
+/* Arguments OptionalPassed */
+function addTogether() {
+  let inputNums = [...arguments];
+
+  if (inputNums.length === 2 && typeof inputNums[0] === 'number' && typeof inputNums[1] === 'number') {
+    return inputNums.reduce((a, b) => a + b);
+  } else if (inputNums.length === 1 && typeof inputNums[0] === 'number') {
+    return (num) => (typeof num === 'number') ? inputNums[0] + num : undefined;
+  } 
+}
+
+console.log(addTogether("http://bit.ly/IqT6zt"));
