@@ -353,7 +353,7 @@ function isPrime(num) {
 }
 
 /* Smallest Common Multiple */
-// Need a better solution 
+// Need a better solution
 function smallestCommons(arr) {
   let min = Math.min(...arr);
   let max = Math.max(...arr);
@@ -369,7 +369,7 @@ function smallestCommons(arr) {
         return targetNum;
       }
     }
-  } 
+  }
 }
 
 /* Drop It */
@@ -387,7 +387,17 @@ function dropElements(arr, func) {
 
 /* Steamroller */
 function steamrollArray(arr) {
-  return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur), []);
+  return arr.reduce(
+    (acc, cur) => acc.concat(Array.isArray(cur) ? steamrollArray(cur) : cur),
+    []
+  );
 }
 
-console.log(steamrollArray([1, [2], [3, [[4]]]]));
+/* Binary Agents */
+function binaryAgent(str) {
+  return str
+    .split(" ")
+    .map((binNum) => String.fromCharCode(parseInt(binNum, 2)))
+    .join("");
+}
+
